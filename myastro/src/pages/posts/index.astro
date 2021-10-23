@@ -1,0 +1,19 @@
+---
+import { Markdown } from 'astro/components';
+import BaseLayout from '$layouts/BaseLayout.astro'
+import Content from '$data/0.md'
+import Paragraph from '$components/Paragraph'
+---
+
+<BaseLayout title="posts">
+  <Markdown>
+  # hello1
+
+```javascript
+let i = 0
+```
+
+    <Content />
+    <Paragraph />
+  </Markdown>
+</BaseLayout>

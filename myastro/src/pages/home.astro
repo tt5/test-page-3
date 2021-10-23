@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Button from '../components/Button.svelte'
+import Title from '../components/Title.astro'
+import json from '../data/example.json'
+let title = "Hello"
+---
+<BaseLayout title="Homepage">
+    <Title {title} />
+        <p>paragraph</p>
+</BaseLayout>

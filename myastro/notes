@@ -1,0 +1,98 @@
+npm init astro
+
+If you put a file into the public folder, it will not be processed by Astro. Instead it will be copied into the build folder untouched. 
+
+Every Astro component must include an HTML template.
+
+For best results, you should only have one <style> tag per-Astro component.
+
+When you’re working with pages, the <style> tag can go nested inside of your page <head>. For standalone components, the <style> tag can go at the top-level of your template.
+
+To send JavaScript to the browser, you can use a <script> tag in your HTML template
+
+To use an Astro component in your template, you first need to import it in the frontmatter component script. An Astro component is always the file’s default import.
+
+Once imported, you can use it like any other HTML element in your template. Note that an Astro component MUST begin with an uppercase letter. Astro will use this to distinguish between native HTML elements (form, input, etc.) and your custom Astro components.
+
+<!-- Example: MyComponent.astro -->
+<div id="my-component">
+  <slot /> <!-- children will go here -->
+</div>
+
+<!-- Usage -->
+<MyComponent>
+  <h1>Hello world!</h1>
+</MyComponent>
+
+named slots allow you to specify multiple places where children should be placed.
+
+
+<!-- Example: MyComponent.astro -->
+<div id="my-component">
+  <header>
+    <!-- children with the `slot="header"` attribute will go here -->
+    <slot name="header" />
+  </header>
+  <main>
+    <!-- children without a `slot` (or with the `slot="default"`) attribute will go here -->
+    <slot />
+  </main>
+  <footer>
+    <!-- children with the `slot="footer"` attribute will go here -->
+    <slot name="footer" />
+  </footer>
+</div>
+
+<!-- Usage -->
+<MyComponent>
+  <h1 slot="header">Hello world!</h1>
+  <p>Lorem ipsum ...</p>
+  <FooterComponent slot="footer" />
+</MyComponent>
+
+
+<!-- MyComponent.astro -->
+<div id="my-component">
+  <slot>
+    <h1>I will render when this slot does not have any children!</h1>
+  </slot>
+</div>
+
+<!-- Usage -->
+<MyComponent />
+
+An Astro component can contain multiple top-level HTML elements
+
+When working inside a JSX expression, however, you must wrap multiple elements inside of a Fragment. Fragments let you render a set of elements without adding extra nodes to the DOM. This is required in JSX expressions because of a limitation of JavaScript: You can never return more than one thing in a JavaScript function or expression. Using a Fragment solves this problem.
+
+The recommended approach is to place files within public/*. This references a file at public/thumbnail.png, which will resolve to /thumbnail.png at the final build (since public/ ends up at /).
+
+Every file in your src/pages directory becomes a page on your site, using the file name to decide the final route.
+
+Astro Components (.astro) and Markdown Files (.md) are the only supported formats for pages. Other page types (like a .jsx React component) are not supported, but you can use anything as a UI component inside of an .astro page to achieve a similar result.
+
+src/pages/index.astro       -> mysite.com/
+src/pages/about/me.astro    -> mysite.com/about/me
+src/pages/posts/1.md        -> mysite.com/posts/1
+
+# svelte
+
+// Button.svelte
+
+<script>
+    export let color;
+</script>
+
+<button
+    on:click={() => {
+        // ...
+    }}
+    style="background: {color}; padding: 1rem;"
+>
+    Text
+</button>
+
+{message}
+
+// ---
+<Button color="blue" client:load />

@@ -1,0 +1,16 @@
+---
+const { content } = Astro.props;
+---
+<html>
+  <head>
+    <title>{content.title}</title>
+  </head>
+  <body>
+    <h1>{content.title}</h1>
+    <img src={content.image} alt="">
+    <article>
+      <!-- slot: Markdown content goes here! -->
+      <slot />
+    </article>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "@example/minimal",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^0.20.10"
+  },
+  "dependencies": {
+    "@astrojs/renderer-svelte": "^0.1.2",
+    "hgrid-css": "^0.7.1-beta",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.4.0",
+    "rehype-autolink-headings": "^6.1.0",
+    "remark-capitalize": "^1.1.0"
+  }
+}

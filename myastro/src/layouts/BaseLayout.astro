@@ -1,0 +1,18 @@
+---
+import BaseHead from '../layouts/BaseHead.astro'
+const {title} = Astro.props
+---
+<html>
+  <head>
+    <BaseHead {title}/>
+  </head>
+  <body class="grid">
+    <nav class="g-row-start-1 g-row-end-2 g-column-span-15 grid g-column-15 g-row-1 border-bottom-gray">
+      <a href="/home" class="g-column-start-3">Home</a>
+      <a href="/posts" class="">Posts</a>
+    </nav>
+    <main class="g-row-start-4 g-row-end-15 g-column-start-3 g-column-end-14">
+    <slot />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+npm init astro
+npmi
+npm run dev
+npm i @astrojs/renderer-svelte

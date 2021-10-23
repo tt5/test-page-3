@@ -1,0 +1,36 @@
+@use 'vars';
+@use 'katex';
+@use 'hgrid-css/sass/hgrid' with (
+  // optional config goes here, for example:
+  $body-bg: lightcyan,
+  $link-underline-color: lightgray,
+  $container-max-width: 1680px,
+  $turn-off-link-decoration: true,
+  $include-grid: true,
+  $include-grid-responsiveness: false,
+  $grid-columns: 15,
+  $grid-rows: 15, 
+  $use-global-link-underlines: true // nicer text links
+);
+
+/*
+h1 {
+    color: vars.$color;
+}
+*/
+
+body {
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+}
+
+nav {
+    background-color: hsl(300,50%,20%);
+    align-items: end;
+    a {
+        color: white;
+        &:hover {
+        color: white;    
+        }
+    }
+}
