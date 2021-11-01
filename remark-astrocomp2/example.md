@@ -17,3 +17,12 @@ digraph graphname {
   a -> c;
 }
 ```
+
+:::dl
+:dt[defintion]
+:dd[
+*list* :br[]
+more :br[]
+more
+]
+:::
